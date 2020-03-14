@@ -1,4 +1,4 @@
-class preloader {
+/*class preloader {
     dots_;
     counter_;
     timerId_;
@@ -20,8 +20,8 @@ class preloader {
         this.preloader_.style.display = 'none';
 
     }
-}
-let k = new preloader();
+}*/
+//let k = new preloader();
 
 const BASE  = 'https://swapi.co/api/';
 let curPage = 1;
@@ -30,40 +30,33 @@ let curPage = 1;
 
 async function getFilmCharactersApi(film) {
 
-    k.start();
+    //k.start();
     const info = await axios.get(BASE + `films/${film}/`);
    return info.data.characters;
 }
 
-
-
-async function getCharacters(apis){
-    let result = [];
-    for (const api of apis){
-        const person = await axios.get(api);
-        result.push(person);
-    }
-    return result;
+async function getCharacter(value){
+    return await axios.get(value);
 }
 
-
-
-async function renderCharacters(characters){
+async function getCharacters(apis) {
+    //let result = [];
     const container = document.querySelector('.container');
-    k.stop();
-    characters.forEach(value =>{
-        const divUser = document.createElement('div');
-        divUser.className = 'character';
-        divUser.innerHTML = `
+    apis.forEach(api => {
+        getCharacter(api).then(value => {
+            const divUser = document.createElement('div');
+            divUser.className = 'character';
+            divUser.innerHTML = `
      <p>name: ${value.data.name} <br>
         birth: ${value.data.birth_year}<br>
         male: ${value.data.gender}
-</p>`;
-        container.append(divUser);
-        console.log(value);
+        </p>`;
+            container.append(divUser);
+        });
     });
-
 }
+
+
 
 
 const getInfoBtn = document.querySelector('.info__btn').addEventListener("click",function () {
@@ -73,8 +66,9 @@ const getInfoBtn = document.querySelector('.info__btn').addEventListener("click"
     inputFilm.value = '';
     if(parseInt(value)>0 && parseInt(value)<=7) {
         getFilmCharactersApi(value)
-            .then(getCharacters)
-            .then(renderCharacters);
+            .then(getCharacters);
+
+            //.then(renderCharacters);
     }else {
         alert('film out of range');
     }
