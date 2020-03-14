@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW#12</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+<form class="start" action="">
+    <h3 class="start__header"> Введіть номер епізоду    </h3>
+<input class="film__input"  type="text">
+<button type="button" class="info__btn">Get Info</button>
+
+</form>
+
+<div class="preloader">
+    <span class="waiting__text">Please Wait...</span>
+    <div class="container__dots">
+    <div class="preloader__dot active"></div>
+    <div class="preloader__dot"></div>
+    <div class="preloader__dot"></div>
+    </div>
+
+</div>
+
+<div class="container"></div>
+<div class="planets">
+    <div class="planets__header">
+        <h2>List of Planets</h2>
+    </div>
+    <div class="list__container">
+    <div class="planets__list">
+    </div>
+        <i class="fas left fa-arrow-circle-left"></i>
+        <i class="fas right fa-arrow-circle-right"></i>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://kit.fontawesome.com/1074a23e20.js" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+
+</body>
+</html>

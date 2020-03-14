@@ -1,0 +1,112 @@
+
+
+
+.character{
+    width: 25%;
+
+    background-color: #272b30;
+    padding: 5px;
+    border: 2px solid #272b30;
+    color: #c8c8b7;
+    position: relative;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 3px 5px 3px rgba(0,0,0,.13);
+    font-family: "Roboto Light";
+
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+.preloader{
+    display: none;
+    flex-direction: column;
+    font-size: 30px;
+    color: red;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.container__dots{
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.preloader__dot{
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    margin-right: 20px;
+    border-radius: 30px;
+}
+.preloader__dot.active{
+    background-color: #e5cccc;
+}
+.film__input{
+    background-color: #272b30;
+    border: red 3px solid;
+    color: red;
+    height: 50px;
+    border-radius: 10px;
+    width: 30px;
+    font-size: 30px;
+}
+.start{
+    position: relative;
+}
+.start__header{
+    display: inline-block;
+    margin-right: 25%;
+}
+.info__btn{
+    position: absolute;
+    background-color: #272b30;
+    width: 200px;
+    height: 60px;
+    border: red 3px solid;
+    border-radius: 10px;
+    color: red;
+    font-size: 30px;
+    cursor: pointer;
+
+
+}
+.fas{
+    color: black;
+    cursor: pointer;
+    font-size: 40px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: red;
+}
+.planets{
+    align-items: center;
+    border: solid 2px red;
+    display: flex;
+    background-color: #272b30;
+    flex-direction: column;
+}
+.planets__list{
+    display: flex;
+    flex-direction: column;
+    line-height: 2;
+    font-family: "Roboto Light";
+    padding: 5px;
+    border: 2px solid #272b30;
+    color: #c8c8b7;
+}
+.planets__header{
+    color: red;
+    font-size: 35px;
+    font-family: "Roboto Light";
+}
+.fas.active{
+    opacity: 0.5;
+}
+
